@@ -26,8 +26,3 @@ class Package:
                 self.status.value,
             )
         )
-
-
-if __name__ == "__main__":
-    test = Package(1, 312, "houston", "tx", 77040, 10, 4, Status.AT_HUB)
-    print(test)

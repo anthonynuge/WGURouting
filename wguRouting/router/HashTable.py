@@ -21,3 +21,14 @@ class HashTable:
             self.table[hashVal] = []
         # Add obj to array list
         self.table[hashVal].append((id, obj))
+
+    # Checks if a package is in the hashtable based on id. Overall time complexity of O(n)
+    def lookup(self, searchId):
+        hashVal = self.calcHash(searchId)
+        # Only iterates through inner array if there is a hash match. Helps with efficiency. O(1)
+        if self.table[hashVal] is not None:
+            # Checks each element in inner array time consuming part depending on number of obj collisions: O(n)
+            for id, obj in self.table[hashVal]:
+                if id == searchId:
+                    return obj
+        return None

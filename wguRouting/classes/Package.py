@@ -2,7 +2,7 @@ from .Status import Status
 
 
 class Package:
-    def __init__(self, id, address, city, state, zip, deadLine, weight, status):
+    def __init__(self, id, address, city, state, zip, deadLine, weight):
         self.id = id
         self.address = address
         self.city = city
@@ -10,7 +10,7 @@ class Package:
         self.zip = zip
         self.deadLine = deadLine
         self.weight = weight
-        self.status = Status(status)
+        self.status = Status("at hub")
 
     def __str__(self) -> str:
         return (

@@ -8,6 +8,8 @@ class Truck:
         self.capacity = 16
         self.currentLocation = start
         self.earliestDeparture = earliestDeparture
+        self.distanceHome = 0
+        self.timeReturn = None
 
     def hasRoom(self) -> bool:
         return len(self.route) <= self.capacity

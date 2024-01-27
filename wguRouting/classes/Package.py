@@ -56,7 +56,7 @@ class Package:
     # O(1)
     def updateStatus(self, checkedTime):
         expectedDeliveryTime = datetime.strptime(self.timeDelivered, "%I:%M %p")
-        if checkedTime > expectedDeliveryTime:
+        if checkedTime > expectedDeliveryTime and self.status == Status.ENROUTE:
             self.status = Status.DELIVERED
-        elif checkedTime < expectedDeliveryTime:
-            self.status = Status.ENROUTE
+        # elif checkedTime < expectedDeliveryTime:
+        #     self.status = Status.ENROUTE

@@ -51,7 +51,6 @@ class DeliveryRouter:
 
             # Output route order to terminal
             truckRouteStr += self.addressList[nextLocation[1]][2] + " --> "
-            # truckRouteStr += "---->"
 
             # Calculate arrival time to destination and updates package expected delivery time. Current time is then set for next iteration.
             deliveryTime = self.calcDeliveryTime(currentTime, distance, truck.speed)
@@ -62,10 +61,15 @@ class DeliveryRouter:
             unvisited.remove(nextLocation)
             currentLocation = nextLocation
 
+            if len(unvisited) < 1:
+                distanceHome = self.getDistanceBetween(currentLocation[1], 0)
+                timeHome = self.calcDeliveryTime(currentTime, distanceHome, truck.speed)
+                truck.distanceHome = distanceHome
+                truck.timeReturn = timeHome
+
         print(f"{truckRouteStr}\n")
         # print(f"package delivery order {route}")
         # print(truck.distance)
-        return route
 
     # Find the distance between two points using the distance csv. Input: 2 points, Output: float of miles.
     # Since row and column are interchangeable flip if empty to save time iterating over complete list

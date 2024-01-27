@@ -264,6 +264,10 @@ def switchDriver(truckDone, truckOn):
 
 
 def startRoutes(time, truck):
+    # First reset all packages to AT_HUB in case already been ran before
+    for packageId in truck.route:
+        p = packageTable.lookup(packageId)
+        p.status = Status.AT_HUB
     startTime = datetime.strptime(truck.earliestDeparture, "%I:%M %p")
     # time = datetime.strptime(time, "%I:%M %p")
     if startTime < time:

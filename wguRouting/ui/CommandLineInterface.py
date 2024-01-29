@@ -44,8 +44,7 @@ class CommandLineInterface:
             "║           Trucks           ║\n"
             "╚════════════════════════════╝\n"
             "Select a option:\n"
-            "[1] Package Truck 1\n"
-            "[2] View Truck 2\n"
+            "[1] Print Truck Load\n"
             "[3] Back\n"
         )
         clearTerm()
@@ -61,7 +60,6 @@ class CommandLineInterface:
             "Select a option:\n"
             "[1] Deliver All Packages\n"
             "[2] Check package status at specific time\n"
-            "[3] Get truck locations at specific time\n"
             "[4] Exit program\n"
         )
         clearTerm()

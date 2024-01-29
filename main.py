@@ -1,4 +1,7 @@
 # Author: Anthony Nguyen
+# student id: 011011798
+# C950: Data Structures and Algorithms 2
+
 from datetime import datetime
 from wguRouting.router.DeliveryRouter import DeliveryRouter
 from wguRouting.router.reader import processCsv
@@ -170,7 +173,7 @@ def loadSimulationPage():
                         userInput = input(
                             "\nEnter id to search for specific package or hit enter for a list of all packages or q to exit time mode "
                         )
-                        print(totalMileage)
+                        print(f"Total Miles: {totalMileage}")
                         print(f"Current Time is {checkedTime}")
                         if userInput == "q":
                             break

@@ -170,6 +170,7 @@ def loadSimulationPage():
                         userInput = input(
                             "\nEnter id to search for specific package or hit enter for a list of all packages or q to exit time mode "
                         )
+                        print(totalMileage)
                         print(f"Current Time is {checkedTime}")
                         if userInput == "q":
                             break

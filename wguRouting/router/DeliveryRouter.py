@@ -61,6 +61,7 @@ class DeliveryRouter:
             unvisited.remove(nextLocation)
             currentLocation = nextLocation
 
+            # Once the list is empty set attribute for truck to determine which truck returns.
             if len(unvisited) < 1:
                 distanceHome = self.getDistanceBetween(currentLocation[1], 0)
                 timeHome = self.calcDeliveryTime(currentTime, distanceHome, truck.speed)

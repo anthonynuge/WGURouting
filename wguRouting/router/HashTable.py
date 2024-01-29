@@ -26,7 +26,7 @@ class HashTable:
 
     # Checks if a package is in the hashtable based on id.
     # Best Case O(1).
-    # Overall time complexity of O(n) based on number of items in inner array
+    # Overall time complexity of O(n) where n is the number key value pairs in the bucket
     def lookup(self, searchId):
         hashVal = self.calcHash(searchId)
 
